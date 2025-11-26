@@ -23,8 +23,26 @@ ul {
   text-align: left;
   font-size: 16px;
 }
-tr,td{
-    border: 2px solid black;
-    border-radius: 5px;
+tr,
+td {
+  border: 2px solid black;
 }
-
+.hang1 {
+  background-color: lightblue;
+}
+form {
+  text-align: center;
+  border-radius: 5px black;
+  background-color: rgb(182, 240, 255);
+  text-align: center;
+  align-items: center;
+}
+label {
+  font-size: 12px;
+}
+.ip {
+  width: 200px;
+  height: 20px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
