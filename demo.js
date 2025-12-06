@@ -1,4 +1,4 @@
-//ham thong thuong
+//Hàm thông thường
 function test1(n) 
 {
     let sum = 0;
@@ -17,21 +17,21 @@ function test1(n)
 }
 console.log(test1(10));
 
-//ham an danh
+//Hàm ẩn danh
 var test2 = function (a,b)
 {
     return a-b;
 }
 console.log(test2(2,3));
 
-//ham mui ten
+//Hàm mũi tên
 const xinchao = (name) =>
 {
     console.log("Xin chao " + name);
 }
 xinchao("Viet Nam");
 
-//ham goi lai
+//Hàm gọi lại
 function test3(n, callback)
 {
     for(let i=n; i>0; i--)
@@ -46,7 +46,7 @@ function done()
 }
 test3(3,done)
 
-//ham de quy
+//Hàm đệ quy
 function test4(n)
 {
     if(n==0) return 1;
@@ -54,7 +54,7 @@ function test4(n)
 }
 console.log(test4(5));
 
-//cau lenh re nhanh if
+//Câu lệnh if
 let score=85;
 if(score>=90){
     console.log("xep loai a");
@@ -70,7 +70,7 @@ for(let i=1;i<=10;i++){
     console.log(i);
 }
 
-//cau lenh switch case
+//Switch case
 let day=3;
 switch(day){
     case 1:
@@ -87,14 +87,14 @@ switch(day){
     default:
         console.log("khong hop le");     
 }
-//vong lap for
+//Vòng lặp for
 var danhsachNhom1=["Mạc Đức Anh","Nguyễn Đức Anh","Dũng","Long","Toàn"];
 
 for(let i=0;i<danhsachNhom1.length;i++){
     console.log(danhsachNhom1[i]);
 }
 
-//lap xac dinh for in
+//Lặp xác định for in
 let person={
     name:"name",
     age:25,
@@ -105,15 +105,15 @@ for(let key in person){
     console.log(key+": "+person[key]);
 }
 
-//lap khong xac dinh=duoc su dung khi khong biet trc so lan lap chi can cau dieu kien con dung
+//Lặp không xác định
 
 let i=1;
 while(i<=5){
     console.log(i);
-    i++;//tang i len 1 sau moi lan lap
+    i++;
 }
 
-//do...while:thuc hien trong do roi kiem tra dieu kien
+//do...while
 let i1=1;
 
 do{
@@ -121,7 +121,7 @@ do{
     i++;
 }while(i<=5);
 
-//doi tuong cua javascript
+//Đối tượng của javascript
 // 1. Khai báo chuỗi
 let text = " JavaScript là một ngôn ngữ lập trình tuyệt vời! ";
 
