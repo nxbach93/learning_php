@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <form>
+        <h1>Đăng ký</h1>
+        <p>Nhập thông tin đăng ký</p>
+        <input id = "hvt" class="ip" type="text" placeholder="Họ và tên" required>
+        <br>
+        <br>
+        <input id = "email" class="ip" type="text" placeholder="Email" required>
+        <br>
+        <br>
+        <input id = "ns" class = "ip" type="date" placeholder="Ngày sinh" required>
+        <br>
+        <br>
+        <input id = "tp" class ="ip" type="text"placeholder="Tỉnh/Thành phố" required>
+        <br>
+        <br>
+        <input id = "tdn" class="ip" type="text" placeholder="Tên đăng nhập" required>
+        <br>
+        <br>
+        <input id = "mk" class="ip" type="password" placeholder="Mật khẩu" required>
+        <br>
+        <br>
+        <button id = "btndk" type="submit">Đăng ký</button>
+        <button id="reload" type="submit">Tải lại</button>
+        <br>
+    </form>
+    <script>
+        document.getElementById("btndk").addEventListener("click", function(event)
+        {
+            let hvt = document.getElementById("hvt").value;
+            let email = document.getElementById("email").value;
+            let ns = document.getElementById("ns").value;
+            let tp = document.getElementById("tp").value;
+            let tdn = document.getElementById("tdn").value;
+            let mk = document.getElementById("mk").value;
+            if(hvt=="" || email=="" || ns=="" || tp == "" || tdn=="" || mk=="")
+            {
+                alert("Vui lòng nhập đầy đủ thông tin!");
+                event.preventDefault();
+                return;
+            }
+            else if(mk.length<6)
+            {
+                alert("Mật khẩu phải có ít nhất 6 ký tự!");
+                event.preventDefault();
+                return;
+            }
+            else if(!email.includes("@gmail.com"))
+            {
+                alert("Email không hợp lệ!");
+                event.preventDefault();
+                return;
+            }
+            else
+            {
+                alert("Đăng ký thành công!");
+                console.log("Họ và tên: " + hvt);
+                console.log("Email/Số điện thoại: " + email);
+                console.log("Ngày sinh: " + ns);
+                console.log("Tỉnh/Thành phố: " + tp);
+                console.log("Tên đăng nhập: " + tdn);
+                console.log("Mật khẩu: " + mk);
+                event.preventDefault();
+            }
+        });
+        document.getElementById("reload").addEventListener("click", function()
+        {
+            location.reload();
+        });
+    </script>
+</body>
+</html>
