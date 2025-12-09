@@ -12,6 +12,8 @@
     </style>
 </head>
 <body>
+    <h1>Bài tập in ra dãy số từ 1 đến 100 (Số chẵn in đậm, chữ màu đỏ, Số lẻ in đậm, nghiêng, chữ màu xanh)</h1>
+    <br>
     <?php
     for( $i=1; $i<=100; $i++)
         {
