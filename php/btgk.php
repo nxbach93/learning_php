@@ -6,8 +6,7 @@
     <title>Document</title>
     <style>
         .numb {
-            margin-right: 10px;
-            white-space: nowrap;
+            margin-right: 15px;
         }
     </style>
 </head>
@@ -17,8 +16,6 @@
     <?php
     for( $i=1; $i<=100; $i++)
         {
-            //Số chẵn in đậm, chữ màu đỏ (red)
-            // Số lẻ in đậm, nghiêng, chữ màu xanh (green)
             if($i % 2 == 0)
             {
                 echo "<b><span class='numb' style='color:red;'>$i</span></b>";

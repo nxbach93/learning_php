@@ -4,20 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ví dụ DOM</title>
-    <link rel="stylesheet" href="DOM.css">
+    <link rel="stylesheet" href="DOM.css" />
+    <script lang="javascript" src="btgk.js"></script>
   </head>
   <body>
-    <h1>DOM</h1>
+    <h2>1. Kiểm tra rỗng</h2>
+    <div class="login-form">
+      <label for="username">Tên đăng nhập:</label>
+      <input type="text" id="username" placeholder="Tên đăng nhập" />
 
-    <h2>1. Style (Lấy,gán)</h2>
+      <label for="password">Mật khẩu:</label>
+      <input type="password" id="password" placeholder="Nhập mật khẩu" />
+
+      <button onclick="validateLogin()">Đăng Nhập</button>
+
+      <div id="message"></div>
+    </div>
+    <hr />
+    <h2>2. Style (Lấy,gán)</h2>
     <p id="text">Văn bản ban đầu</p>
-    <button onclick="getStyle()">✍️ Lấy style</button>
-    <button onclick="setStyle()">🎨 Gán style</button>
-    <p id="result">Kết quả sau khi gán:</p>
+    <button onclick="getStyle()">Lấy style</button>
+    <button onclick="setStyle()">Gán style</button>
+    <p id="result">Kết quả:</p>
 
     <hr />
 
-    <h2>2. Thao tác DOM</h2>
+    <h2>3. Thao tác DOM</h2>
     <h1 id="title">Chưa thay đổi</h1>
     <p class="description">Văn bản 1</p>
     <p class="description">Văn bản 2</p>
@@ -30,94 +42,16 @@
 
     <hr />
 
-    <h2>3. Thay thế Image</h2>
+    <h2>4. Thay thế Image</h2>
     <div id="img-container">
       <img
         id="image"
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/T1_esports_logo.svg/2560px-T1_esports_logo.svg.png"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIHYd-UgJHqeayWV7nHEpNticiIVS3EDkwkg&s"
         alt="Hình ảnh ban đầu"
       />
       <button onclick="replaceElement()">🖼️ Change</button>
     </div>
 
     <hr />
-
-    <h2>4. Kiểm tra rỗng</h2>
-    <div class="login-form">
-      <label for="username">Tên đăng nhập:</label>
-      <input type="text" id="username" placeholder="Tên đăng nhập" />
-
-      <label for="password">Mật khẩu:</label>
-      <input type="password" id="password" placeholder="Nhập mật khẩu" />
-
-      <button onclick="validateLogin()">Đăng Nhập</button>
-
-      <div id="message"></div>
-    </div>
-
-    <script>
-      //1
-      function getStyle() {
-        const textElement = document.getElementById("text");
-        const style = window.getComputedStyle(textElement);
-        const color = style.color;
-        const size = style.fontSize;
-
-        document.getElementById(
-          "result"
-        ).innerHTML = `Kết quả Style: Màu: <b>${color}</b>, Cỡ chữ: <b>${size}</b>`;
-      }
-
-      function setStyle() {
-        const textElement = document.getElementById("text");
-        textElement.style.color = "pink";
-        textElement.style.backgroundColor = "#f0fff0";
-        textElement.style.border = "1px solid red";
-        document.getElementById("result").textContent = "Gán style!";
-      }
-
-      //2
-      function changeText() {
-        document.getElementById("title").textContent = "Đã thay đổi!";
-
-        const paragraph = document.querySelector(".description");
-        paragraph.className = "highlight";
-
-        const list = document.getElementById("list");
-        const newLi = document.createElement("li");
-        newLi.textContent = "Đã thêm";
-        list.appendChild(newLi);
-      }
-
-      //3
-      function replaceElement() {
-        const imageElement = document.getElementById("image");
-
-        // Ảnh mới
-        imageElement.src =
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2tnamAgTNYi2nE0I8o2UMowUDwdcfsa27Ew&s";
-        imageElement.alt = "Hình ảnh mới";
-        alert("Đã thay thế hình ảnh T liệt!");
-      }
-
-      //4
-      function validateLogin() {
-        const username = document.getElementById("username").value.trim();
-        const password = document.getElementById("password").value.trim();
-        const messageDiv = document.getElementById("message");
-
-        messageDiv.textContent = "";
-        messageDiv.className = "";
-
-        if (username === "" || password === "") {
-          messageDiv.textContent =
-            "Vui lòng nhập đầy đủ Tên đăng nhập và Mật khẩu.";
-          messageDiv.classList.add("error");
-        } else {
-          messageDiv.textContent = "Thành công!";
-          messageDiv.classList.add("success");
-        }
-      }
-    </script>
   </body>
 </html>
